@@ -48,7 +48,7 @@
   </nav>
 
   <div id="page-index">
-    <div class="row top-nav-menu">
+    <div class="row top-nav-menu" v-cloak>
       <div class="col s3 m2 col-link">
         <button v-if="year == '2016'" class="btn btn-pill active" @click="setYear(2016)">2016</button>
         <button v-else class="btn btn-pill" @click="setYear(2016)">2016</button>
@@ -75,7 +75,7 @@
       </div>
 
     </div>
-    <div class="row top-nav-menu">
+    <div class="row top-nav-menu" v-cloak>
       <div class="col s2 m1 col-link">
         <button v-if="month == 'January'" class="btn btn-pill active" @click="getProphecies(year, 'January')">Jan
         </button>
@@ -155,7 +155,7 @@
       </div>
     </div>
     <div class="row plain-element">
-      <div class="col sidebar">
+      <div class="col sidebar" v-cloak>
         <br>
         <div class="row section">
           <div class="row">
@@ -270,7 +270,7 @@
         </div>
       </div>
       <div class="col s12 m12 l10 col-link">
-        <div class="dashboard-cards" id="welcome">
+        <div class="dashboard-cards" id="welcome" v-cloak>
           <div class="row plain-element">
             <div class="row top-menu">
               <div v-if="month == 'January'" class="col s1 plain-element active"><a
@@ -347,7 +347,7 @@
               </div>
             </div>
           </div>
-          <div v-on="prophecies" class="dashboard-cards">
+          <div v-on="prophecies" class="dashboard-cards" v-cloak>
             <br>
             <div class="col s12 m12 l6 plain-element left-align">
               <div v-for="(row, index) in prophecies" class="row row-text">
