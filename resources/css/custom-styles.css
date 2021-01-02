@@ -731,6 +731,10 @@ a:hover {
     display: none;
   }
 
+  .top-menu {
+    display: none;
+  }
+
   .top-nav-menu {
     display: block;
   }

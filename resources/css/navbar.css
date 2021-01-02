@@ -57,7 +57,7 @@
 }
 
 .navbar-header {
-	width: 33%;
+	width: 66%;
 	margin-left: 0px;
 	float: left;
 	padding-left: 10px;
@@ -319,7 +319,7 @@ nav ul a:hover {
 
 	}
 	.navbar-header {
-		width: 12%;
+		width: 66%;
 	}
 }
 
@@ -332,9 +332,6 @@ nav ul a:hover {
 		padding-right: 1%;
 	}
 
-  .navbar-header {
-		width: 16%;
-	}
 }
 
 @media(max-width:1025px) {
@@ -358,34 +355,23 @@ nav ul a:hover {
 @media(max-width:900px) {
 
   .navbar-header {
-		width: 20%;
+		width: 100%;
+	}
+
+		.navbar-right {
+	  display: none;
 	}
 
 }
 
 @media only screen and (max-width: 701px) {
 
-	.navbar-header {
-		width: 30%;
-	}
-
-	.navbar-right {
-	  display: none;
-	}
-
-
 }
 
 
 @media only screen and (max-width: 600px) {
 
-	.navbar-header {
-		width: 10%;
-	}
 
-	.navbar-brand strong{
-	  display: none;
-	}
 
 
 	.btn-transparent {

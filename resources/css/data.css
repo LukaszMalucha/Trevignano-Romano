@@ -379,7 +379,7 @@ td {
 
 @media(max-width:600px) {
   .dashboard-cards {
-    width: 96%;
+    width: 100%;
   }
 
 

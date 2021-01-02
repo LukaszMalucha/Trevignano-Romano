@@ -19,9 +19,9 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700&display=swap" rel="stylesheet">
   <!-- Custom Styles-->
-  <link rel="stylesheet" href="resources/css/custom-style.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="resources/css/dataa.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="resources/css/navbars.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="resources/css/custom-styles.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="resources/css/data.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="resources/css/navbar.css" rel="stylesheet"/>
 
 </head>
 <body>
@@ -35,7 +35,7 @@
         <i class="fas fa-church"></i><strong> Apparitions in Trevignano Romano</strong>
       </a>
     </div>
-    <div class="col s4 m5 l8 plain-element right-align">
+    <div class="col s4 m5 l4 plain-element right-align">
       <ul class="nav navbar-top-links navbar-right">
 
         <li><a class="nav-link" target="_blank" href="https://www.biblekeywords.com/"><i class="fas fa-bible"></i> Bible
@@ -49,17 +49,109 @@
 
   <div id="page-index">
     <div class="row top-nav-menu">
-      <div class="col s3 m3 col-link">
-        <button class="btn btn-pill">Keyword Search</button>
+      <div class="col s3 m2 col-link">
+        <button v-if="year == '2016'" class="btn btn-pill active" @click="setYear(2016)">2016</button>
+        <button v-else class="btn btn-pill" @click="setYear(2016)">2016</button>
       </div>
-      <div class="col s3 m3 col-link">
-        <button class="btn btn-pill">Wildcard Search</button>
+      <div class="col s3 m2 col-link">
+        <button v-if="year == '2017'" class="btn btn-pill active" @click="setYear(2017)">2017</button>
+        <button v-else class="btn btn-pill" @click="setYear(2017)">2017</button>
       </div>
-      <div class="col s3 m3 col-link">
-        <button class="btn btn-pill">Old Testament</button>
+      <div class="col s3 m2 col-link">
+        <button v-if="year == '2018'" class="btn btn-pill active" @click="setYear(2018)">2018</button>
+        <button v-else class="btn btn-pill" @click="setYear(2018)">2018</button>
       </div>
-      <div class="col s3 m3 col-link">
-        <button class="btn btn-pill">New Testament</button>
+      <div class="col s3 m2 col-link">
+        <button v-if="year == '2019'" class="btn btn-pill active" @click="setYear(2019)">2019</button>
+        <button v-else class="btn btn-pill" @click="setYear(2019)">2019</button>
+      </div>
+      <div class="col s3 m2 col-link">
+        <button v-if="year == '2020'" class="btn btn-pill active" @click="setYear(2020)">2020</button>
+        <button v-else class="btn btn-pill" @click="setYear(2020)">2020</button>
+      </div>
+      <div class="col s3 m2 col-link">
+        <button v-if="year == '2021'" class="btn btn-pill active" @click="setYear(2021)">2021</button>
+        <button v-else class="btn btn-pill" @click="setYear(2021)">2021</button>
+      </div>
+
+    </div>
+    <div class="row top-nav-menu">
+      <div class="col s2 m1 col-link">
+        <button v-if="month == 'January'" class="btn btn-pill active" @click="getProphecies(year, 'January')">Jan
+        </button>
+        <button v-else class="btn btn-pill" @click="getProphecies(year, 'January')">Jan</button>
+      </div>
+      <div class="col s2 m1 col-link">
+        <button v-if="month == 'February'" class="btn btn-pill active" @click="getProphecies(year, 'February')">Feb
+        </button>
+        <button v-else class="btn btn-pill" @click="getProphecies(year, 'February')">Feb</button>
+      </div>
+      <div class="col s2 m1 col-link">
+        <button v-if="month == 'March'" class="btn btn-pill active" @click="getProphecies(year, 'March')">Mar</button>
+        <button v-else class="btn btn-pill" @click="getProphecies(year, 'March')">Mar</button>
+      </div>
+      <div class="col s2 m1 col-link">
+        <button v-if="month == 'April'" class="btn btn-pill active" @click="getProphecies(year, 'April')">Apr</button>
+        <button v-else class="btn btn-pill" @click="getProphecies(year, 'April')">Apr</button>
+      </div>
+      <div class="col s2 m1 col-link">
+        <button v-if="month == 'May'" class="btn btn-pill active" @click="getProphecies(year, 'May')">May
+        </button>
+        <button v-else class="btn btn-pill" @click="getProphecies(year, 'May')">May</button>
+      </div>
+      <div class="col s2 m1 col-link">
+        <button v-if="month == 'June'" class="btn btn-pill active" @click="getProphecies(year, 'June')">Jun
+        </button>
+        <button v-else class="btn btn-pill" @click="getProphecies(year, 'June')">Jun</button>
+      </div>
+      <div class="col s2 m1 col-link">
+        <button v-if="month == 'July'" class="btn btn-pill active" @click="getProphecies(year, 'July')">Jul
+        </button>
+        <button v-else class="btn btn-pill" @click="getProphecies(year, 'July')">Jul</button>
+      </div>
+      <div class="col s2 m1 col-link">
+        <button v-if="month == 'August'" class="btn btn-pill active" @click="getProphecies(year, 'August')">Aug
+        </button>
+        <button v-else class="btn btn-pill" @click="getProphecies(year, 'August')">Aug</button>
+      </div>
+      <div class="col s2 m1 col-link">
+        <button v-if="month == 'September'" class="btn btn-pill active" @click="getProphecies(year, 'September')">Sep
+        </button>
+        <button v-else class="btn btn-pill" @click="getProphecies(year, 'September')">Sep</button>
+      </div>
+      <div class="col s2 m1 col-link">
+        <button v-if="month == 'October'" class="btn btn-pill active" @click="getProphecies(year, 'October')">Oct
+        </button>
+        <button v-else class="btn btn-pill" @click="getProphecies(year, 'October')">Oct</button>
+      </div>
+      <div class="col s2 m1 col-link">
+        <button v-if="month == 'November'" class="btn btn-pill active" @click="getProphecies(year, 'November')">Nov
+        </button>
+        <button v-else class="btn btn-pill" @click="getProphecies(year, 'November')">Nov</button>
+      </div>
+      <div class="col s2 m1 col-link">
+        <button v-if="month == 'December'" class="btn btn-pill active" @click="getProphecies(year, 'December')">Dec
+        </button>
+        <button v-else class="btn btn-pill" @click="getProphecies(year, 'December')">Dec</button>
+      </div>
+
+
+    </div>
+    <div class="row top-nav-menu">
+      <div class="col s4 m3 col-link">
+        <button v-if="lang == 'en'" class="btn btn-pill active" @click="setLanguage('en')">English
+        </button>
+        <button v-else class="btn btn-pill" @click="setLanguage('en')">English</button>
+      </div>
+      <div class="col s4 m3 col-link">
+        <button v-if="lang == 'it'" class="btn btn-pill active" @click="setLanguage('it')">Italian
+        </button>
+        <button v-else class="btn btn-pill" @click="setLanguage('it')">Italian</button>
+      </div>
+      <div class="col s4 m3 col-link">
+        <button v-if="lang == 'pl'" class="btn btn-pill active" @click="setLanguage('pl')">Polish
+        </button>
+        <button v-else class="btn btn-pill" @click="setLanguage('pl')">Polish</button>
       </div>
     </div>
     <div class="row plain-element">
@@ -177,7 +269,7 @@
 
         </div>
       </div>
-      <div class="col s10 m10 col-link">
+      <div class="col s12 m12 l10 col-link">
         <div class="dashboard-cards" id="welcome">
           <div class="row plain-element">
             <div class="row top-menu">
