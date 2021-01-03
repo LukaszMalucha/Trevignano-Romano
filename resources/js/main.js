@@ -26,6 +26,7 @@ new Vue({
     },
     setYear(year) {
       this.year = year
+      this.month = "January"
       this.prophecies = this.trevignano.filter(prophecy => {
         return prophecy.year.includes(year) && prophecy.month_string.includes("January")
 
