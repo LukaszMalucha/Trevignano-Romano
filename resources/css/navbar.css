@@ -350,6 +350,10 @@ nav ul a:hover {
 		position: relative;
 	}
 
+			.navbar-right {
+	  display: none;
+	}
+
 }
 
 @media(max-width:900px) {
@@ -358,9 +362,7 @@ nav ul a:hover {
 		width: 100%;
 	}
 
-		.navbar-right {
-	  display: none;
-	}
+
 
 }
 
