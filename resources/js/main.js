@@ -1,4 +1,6 @@
 import trevignano_2016 from '../js/trevignano_2016.js';
+import trevignano_2017 from '../js/trevignano_2017.js';
+import trevignano_2018 from '../js/trevignano_2018.js';
 import trevignano from '../js/trevignano.js';
 
 new Vue({
@@ -15,6 +17,8 @@ new Vue({
       lang: "en",
       prophecies: [],
       trevignano_2016: trevignano_2016,
+      trevignano_2017: trevignano_2017,
+      trevignano_2018: trevignano_2018,
       trevignano: trevignano
     }
   },
@@ -28,18 +32,19 @@ new Vue({
     setYear(year) {
       this.year = year
       this.month = "January"
-      if (year == "2016") {      
+      if (year == "2016") {
+        this.month = "April"
         this.prophecies = this.trevignano_2016.filter(prophecy => {
-        return prophecy.month_string.includes("January")
+        return prophecy.month_string.includes("April")
         })
       }
       else if (year == "2017") {
-        this.prophecies = this.trevignano.filter(prophecy => {
+        this.prophecies = this.trevignano_2017.filter(prophecy => {
         return prophecy.year.includes(year) && prophecy.month_string.includes("January")
         })
       }
       else if (year == "2018") {
-        this.prophecies = this.trevignano.filter(prophecy => {
+        this.prophecies = this.trevignano_2018.filter(prophecy => {
         return prophecy.year.includes(year) && prophecy.month_string.includes("January")
         })
       }
