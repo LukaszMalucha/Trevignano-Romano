@@ -2,7 +2,9 @@ import trevignano_2016 from '../js/trevignano_2016.js';
 import trevignano_2017 from '../js/trevignano_2017.js';
 import trevignano_2018 from '../js/trevignano_2018.js';
 import trevignano_2019 from '../js/trevignano_2019.js';
-import trevignano from '../js/trevignano.js';
+import trevignano_2020 from '../js/trevignano_2020.js';
+import trevignano_2021 from '../js/trevignano_2021.js';
+
 
 new Vue({
   el: '#app',
@@ -21,7 +23,8 @@ new Vue({
       trevignano_2017: trevignano_2017,
       trevignano_2018: trevignano_2018,
       trevignano_2019: trevignano_2019,
-      trevignano: trevignano
+      trevignano_2020: trevignano_2020,
+      trevignano_2021: trevignano_2021,
     }
   },
   computed: {
@@ -62,15 +65,15 @@ new Vue({
 
       else if (year == "2020") {
         this.month = "January"
-        this.prophecies = this.trevignano.filter(prophecy => {
-        return prophecy.year.includes(year) && prophecy.month_string.includes("January")
+        this.prophecies = this.trevignano_2020.filter(prophecy => {
+        return prophecy.month_string.includes("January")
         })
       }
 
       else {
         this.month = "January"
-        this.prophecies = this.trevignano.filter(prophecy => {
-        return prophecy.year.includes(year) && prophecy.month_string.includes("January")
+        this.prophecies = this.trevignano_2021.filter(prophecy => {
+        return prophecy.month_string.includes("January")
         })
 
       }
@@ -103,14 +106,13 @@ new Vue({
       }
 
       else if (year == "2020") {
-        this.prophecies = this.trevignano.filter(prophecy => {
-        return prophecy.year.includes(year) && prophecy.month_string.includes(month)
+        this.prophecies = this.trevignano_2020.filter(prophecy => {
+        return prophecy.month_string.includes(month)
         })
       }
-
       else {
-        this.prophecies = this.trevignano.filter(prophecy => {
-        return prophecy.year.includes(year) && prophecy.month_string.includes(month)
+        this.prophecies = this.trevignano_2021.filter(prophecy => {
+        return prophecy.month_string.includes(month)
         })
 
       }
@@ -119,7 +121,7 @@ new Vue({
   mounted () {
   },
   created() {
-    this.getProphecies('2020', 'January')
+    this.getProphecies('2021', 'January')
   }
 })
 
