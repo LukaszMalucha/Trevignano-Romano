@@ -20,7 +20,7 @@
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700&display=swap" rel="stylesheet">
   <!-- Custom Styles-->
   <link rel="stylesheet" href="resources/css/custom-styles.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="resources/css/data.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="resources/css/dataa.css" rel="stylesheet"/>
   <link rel="stylesheet" href="resources/css/navbar.css" rel="stylesheet"/>
 
 </head>
@@ -349,7 +349,8 @@
           </div>
           <div v-on="prophecies" class="dashboard-cards" v-cloak>
             <br>
-            <div class="col s12 m12 l6 plain-element left-align">
+            <div class="col s12 m12 l12 left-align col-prophecies">
+              <div class="col s12 m12 l8  left-align">
               <div v-for="(row, index) in prophecies" class="row row-text">
                 <h5> {{ row.day }}.{{ row.month }}.{{ row.year }} - {{ row.author }}</h5>
                 <div v-if="lang == 'en'" class="row  left-align">
@@ -366,7 +367,7 @@
               </div>
 
             </div>
-
+            </div>
           </div>
 
         </div>
