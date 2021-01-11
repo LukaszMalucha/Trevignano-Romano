@@ -17,10 +17,59 @@ dataset_3 = pd.read_csv("2018_cleaned.csv", encoding="utf-8")
 dataset_4 = pd.read_csv("2019_cleaned.csv", encoding="utf-8")
 dataset_5 = pd.read_csv("2020_cleaned.csv", encoding="utf-8")
 dataset_6 = pd.read_csv("2021_cleaned.csv", encoding="utf-8")
-dataset_7 = pd.read_csv("2018_08_cleaned.csv", encoding="utf-8")
-dataset_8 = pd.read_csv("2020_05_cleaned.csv", encoding="utf-8")
 
-dataset = pd.concat([dataset_1,dataset_2,dataset_3,dataset_4,dataset_5,dataset_6,dataset_7, dataset_8])
+
+
+
+dataset = pd.concat([dataset_1,dataset_2,dataset_3,dataset_4,dataset_5,dataset_6])
+
+dataset["month"] = dataset["month"].astype(str)
+dataset["month"] = np.where(dataset["month"].str.len() == 1, "0" + dataset["month"], dataset["month"])
+
+dataset["day"] = dataset["day"].astype(str)
+dataset["day"] = np.where(dataset["day"].str.len() == 1, "0" + dataset["day"], dataset["day"])
+
+dataset["day"] = dataset["day"].str.replace("Cenacolo", "28")
+dataset["day"] = dataset["day"].str.replace("rm", "12")
+
+dataset["date"] = dataset["year"].astype(str) + "-" + dataset["month"].astype(str) + "-" + dataset["day"].astype(str) 
+dataset["date"] = dataset["year"].astype(str) + "-" + dataset["month"].astype(str) + "-" + dataset["day"].astype(str) 
+
+ost = pd.date_range("2016-01-01", "2021-12-31")
+osta = ost.strftime("%Y-%m-%d")
+
+fr = osta.to_frame(index=False, name="date")
+
+
+data = fr.merge(dataset, how="left", on=["date"])
+
+
+data = data[["date", "year"]]
+
+
+
+data["apparition"] = np.where(data["year"].isnull(), 0, 1)
+data = data[["date", "apparition"]]
+
+
+data.to_csv("apparitions.csv", encoding="utf-8")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -55,10 +104,6 @@ dataset["text_en"] = dataset["text_en"].str.replace("”", "")
 
 dataset = dataset.sort_values(by=["year", "month", "day"])
 
-translator = google_translator()  
-
-
-dataset["text_pl"] = dataset["text"].apply(lambda x: translator.translate(x,lang_tgt='pl'))
 
 
 dataset = dataset[["year", "month", "day", "author", "text", "text_en", "text_pl", "month_string"]]
@@ -67,6 +112,9 @@ dataset["text_pl"] = dataset["text_pl"].str.replace("Amen \.", "Amen.")
 dataset["text_en"] = dataset["text_en"].str.replace("Amen \.", "Amen.")
 dataset["text"] = dataset["text"].str.replace("Amen \.", "Amen.")
 
+
+
+dataset.to_csv("trevignano.csv", encoding="utf-8")
 dataset.to_json("trevignano.json",orient="records")
 
 
