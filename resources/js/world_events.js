@@ -688,6 +688,13 @@ export default
     "message": "2018-08-25"
   },
      {
+    "title": "document regarding the Eucharist has been signed",
+    "message": "Pray, pray, pray a lot, by now the document regarding the Eucharist has been signed",
+    "tag": "Signs",
+    "order": "5",
+    "message": "2018-08-25"
+  },
+     {
     "title": "Jesus no longer in Church",
     "message": "I will no longer be present in the Church, get ready to gather in homes to pray",
     "tag": "Signs",
