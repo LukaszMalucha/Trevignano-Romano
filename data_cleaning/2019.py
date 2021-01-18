@@ -156,6 +156,7 @@ dataset['text'] = dataset['text'].str.replace("Cenacolo in Montelupo Fiorentino 
 dataset['text'] = dataset['text'].str.replace("Fiaccolata", "")
 dataset['text'] = dataset['text'].str.replace(" su alla croce blu per la festa  dell' Immacolata", "")
 dataset['text'] = dataset['text'].str.replace("\.   Messaggio ricevuto;  ", "")
+dataset['text'] = dataset['text'].str.replace("\. Madonna di", ".")
 
 
 dataset['text'] = dataset['text'].str.strip()
@@ -190,7 +191,7 @@ dataset["text"] = dataset["text"].str.replace("amen", "Amen")
 
 # JESUS AUTHOR
 dataset["author"] = np.where(dataset["date"] == "19_03_2019", "Jesus Christ", dataset["author"])
-
+dataset["author"] = np.where(dataset["date"] == "08_01_2019", "Jesus Christ", dataset["author"])
 
 
 translator = google_translator()  
@@ -234,6 +235,73 @@ dataset["text_pl"] = dataset["text_pl"].str.replace("Opróżniłem cię ze wszys
 dataset["text_pl"] = dataset["text_pl"].str.replace("ile będzie moich prezentów każdego dnia", "ile będzie moich darów każdego dnia")
 dataset["text_pl"] = dataset["text_pl"].str.replace("byłem człowiekiem jak Ty, ale też , tak jak ty, stajesz się", "byłem człowiekiem jak Ty, ale także uduchowionym , podobnie jak ty teraz stajesz się")
 dataset["text_pl"] = dataset["text_pl"].str.replace("Pokorę polecam mi dzieci", "Pokorę polecam wam dzieci")
+dataset["text_pl"] = dataset["text_pl"].str.replace("ile grzechów każdego dnia gromadzi wszyscy, Kościół, Wierny i nie", "ile grzechów każdego dnia popełniają wszyscy, Kościół, wierzący i niewierzący")
+dataset["text_pl"] = dataset["text_pl"].str.replace("Moje dzieci, dlaczego każdego dnia pozwalacie się kusić zło", "Moje dzieci, dlaczego każdego dnia pozwalacie się kusić złu")
+dataset["text_pl"] = dataset["text_pl"].str.replace("nie trać jeszcze czasu", "nie trać już czasu")
+dataset["text_pl"] = dataset["text_pl"].str.replace("Amen \”\.", "Amen")
+dataset["text_pl"] = dataset["text_pl"].str.replace("Moi umiłowani, ci, którzy nadejdą, będą czasami żniw", "Moi umiłowani, czasy, które nadejdą, będą czasami żniw")
+dataset["text_pl"] = dataset["text_pl"].str.replace("a którzy jeszcze tego nie zrobili", "a tych którzy jeszcze tego nie zrobili")
+dataset["text_pl"] = dataset["text_pl"].str.replace("przysmaki są dla was gotowe", "wspaniałości są dla was przygotowane")
+dataset["text_pl"] = dataset["text_pl"].str.replace("weźcie siły w Eucharystię", "czerpcie siły z Eucharystii")
+dataset["text_pl"] = dataset["text_pl"].str.replace("i to macierzyńską", "i z matczyną miłością")
+dataset["text_pl"] = dataset["text_pl"].str.replace("ile cierpień i udręk będziecie musieli stawić czoła", "ilu cierpieniom i udrękom będziecie musieli stawić czoła")
+dataset["text_pl"] = dataset["text_pl"].str.replace("ale z całą miłością, która mnie naciska", "ale z całą miłością, na której mi zależy")
+dataset["text_pl"] = dataset["text_pl"].str.replace("iz całą ludzkością", "i z całą ludzkością")
+dataset["text_pl"] = dataset["text_pl"].str.replace("ale jak bardzo chciałbym słuchać i pomagać wszystkim", "ale jak bardzo chciałbym wysłuchać i pomóc każdemu")
+dataset["text_pl"] = dataset["text_pl"].str.replace("udzielę żądanych łask", "udzielę potrzebnych łask")
+dataset["text_pl"] = dataset["text_pl"].str.replace("Jestem tutaj, proszę cię i chcę, żebyś mnie rozpoznał", "Jestem tutaj, proszę cię żebyś mnie rozpoznał")
+dataset["text_pl"] = dataset["text_pl"].str.replace("\”\.", ".")
+dataset["text_pl"] = dataset["text_pl"].str.replace("Ukochana córko, zostanę z tobą modlić się", "Ukochana córko, zostanę by się z tobą modlić")
+dataset["text_pl"] = dataset["text_pl"].str.replace("Zawsze bądź zjednoczony, troszcz się o najsłabszych i największych Twoje nagrody", "Zawsze bądźcie zjednoczeni, troszczcie się o najsłabszych a wielkie będą wasze nagrody")
+dataset["text_pl"] = dataset["text_pl"].str.replace("Otóż,", "Teraz")
+dataset["text_pl"] = dataset["text_pl"].str.replace("wzniesione do nieba", "wzniesione do Nieba")
+dataset["text_pl"] = dataset["text_pl"].str.replace("kocham cię i wzywam mnie, a będę z tobą", "kocham cię, wezwij mnie, a będę z tobą")
+dataset["text_pl"] = dataset["text_pl"].str.replace("pozwalając Ja, Współodkupicielce, ostrzec jej dzieci, aby powrócili do Boga Bóg jest dobry i miłosierny", "pozwalając Mi, Współodkupicielce, ostrzec dzieci, aby powróciły do Boga, który jest dobry i miłosierny")
+dataset["text_pl"] = dataset["text_pl"].str.replace("dzieci i będziecie", "i będziecie dzieci")
+dataset["text_pl"] = dataset["text_pl"].str.replace("wyznawcy Jezusa, na wyznawców szatana", "na wyznawców Jezusa i wyznawców szatana")
+dataset["text_pl"] = dataset["text_pl"].str.replace("Wszyscy jesteście Panem", "Wszyscy należycie do Pana")
+dataset["text_pl"] = dataset["text_pl"].str.replace("miłość i spokój w tym domu", "miłość i pokój temu domowi")
+dataset["text_pl"] = dataset["text_pl"].str.replace("kocham was oburzającą miłością", "kocham was nieporównywalną miłością")
+dataset["text_pl"] = dataset["text_pl"].str.replace("Służebnica Pańska", "Służebnico Pańska")
+dataset["text_pl"] = dataset["text_pl"].str.replace("upadek wielu moich ulubionych dzieci", "upadek wielu z moich ulubionych dzieci")
+dataset["text_pl"] = dataset["text_pl"].str.replace("gdzie zły nie może cię dotknąć", "gdzie zły nie może was dotknąć")
+dataset["text_pl"] = dataset["text_pl"].str.replace("grzechowi nie będzie już wierzyć, kiedy w kościele będzie miała miejsce protestantyzacja", "nie będzie się już wierzyć w grzech, gdy w kościele będzie miała miejsce protestantyzacja")
+dataset["text_pl"] = dataset["text_pl"].str.replace("kocham was całym sercem \.", "kocham was całym sercem.")
+dataset["text_pl"] = dataset["text_pl"].str.replace("aby królestwo niebieskie mogło się otworzyć i cieszyć się tym", "aby Królestwo Niebieskie mogło się otworzyć i bycie cieszyli się tym")
+dataset["text_pl"] = dataset["text_pl"].str.replace(" i u mojej mamy", " i do mojej mamy")
+dataset["text_pl"] = dataset["text_pl"].str.replace("Wasi bracia i wasz ukochany mąż", "Twoi bracia i ukochany mąż")
+dataset["text_pl"] = dataset["text_pl"].str.replace(" jesteście w niebie", " jesteście w Niebie")
+dataset["text_pl"] = dataset["text_pl"].str.replace("nadchodzące czasy będą bardzo trudne do stawienia czoła", "będzie trudno stawić czoła nadchdzącym czasom")
+dataset["text_pl"] = dataset["text_pl"].str.replace("umyliście swoje sumienie", "oczyciliście swoje sumienie")
+dataset["text_pl"] = dataset["text_pl"].str.replace("musisz go intensywnie przeżywać, a nie tylko w nim pomagać", "musisz go intensywnie przeżywać, a nie tylko współuczestniczyć")
+dataset["text_pl"] = dataset["text_pl"].str.replace("potrzebujesz też spowiedzi i komunii z innymi", "potrzebujesz też spowiedzi i pojednania ze wszystkimi")
+dataset["text_pl"] = dataset["text_pl"].str.replace(" Watykan się potrząśnie", " Watykan zadrży")
+dataset["text_pl"] = dataset["text_pl"].str.replace("królestwa niebo", "Królestwa Niebieskiego")
+dataset["text_pl"] = dataset["text_pl"].str.replace("od Boga\. ,", "od Boga.")
+dataset["text_pl"] = dataset["text_pl"].str.replace("tylko z prawdziwą wiarą może coś zmienić", "tylko prawdziwą wiarą możecie coś zmienić.")
+dataset["text_pl"] = dataset["text_pl"].str.replace("nie bądźcie każdym Bogiem z siebie", "nie bądźcie Bogiem sami dla siebie")
+dataset["text_pl"] = dataset["text_pl"].str.replace("wzywam mojego Syna", "wzywajcie mojego Syna")
+dataset["text_pl"] = dataset["text_pl"].str.replace("aby was chronił", "aby was chronić")
+dataset["text_pl"] = dataset["text_pl"].str.replace("pozwól mu się rozpieszczać", "pozwólcie mu się rozpieszczać")
+dataset["text_pl"] = dataset["text_pl"].str.replace("umacniać się w wierze, tylko", "umacniajcie się w wierze, tylko")
+dataset["text_pl"] = dataset["text_pl"].str.replace("jestem Niepokalane Poczęcie", "jestem Niepokalanyn Poczęciem")
+dataset["text_pl"] = dataset["text_pl"].str.replace("zawsze módlcie się Różaniec Święty", "zawsze odmawiajcie Różaniec Święty")
+dataset["text_pl"] = dataset["text_pl"].str.replace("wszystkie plany Boże", "wszystkich planów Bożych")
+dataset["text_pl"] = dataset["text_pl"].str.replace("niebo i modlitwa", "Niebo i modlitwa")
+dataset["text_pl"] = dataset["text_pl"].str.replace("namaszczyc Duchem Świętym", "naznaczyć Duchem Świętym")
+dataset["text_pl"] = dataset["text_pl"].str.replace("ale jak wielkie będzie Królestwo Niebieskie, że wy Obiecałam", "ale wielkie będzie Królestwo Niebieskie, obiecuję")
+dataset["text_pl"] = dataset["text_pl"].str.replace("uwierzenie i świadectwo o moim zmartwychwstałym Synu", "wierzcie i głoście świadectwo o moim zmartwychwstałym Synu")
+
+
+
+
+
+
+ś
+
+
+
+
 
 
 dataset["text_en"] = dataset["text_en"].str.replace("perfume", "scent")
@@ -260,7 +328,7 @@ dataset_mary["text_pl"] = dataset_mary["text_pl"].str.replace("Będziesz uwielbi
 dataset_mary["text_pl"] = dataset_mary["text_pl"].str.replace("przyszedłem", "przyszłam")
 dataset_mary["text_pl"] = dataset_mary["text_pl"].str.replace("który przychodzę z łaski", "która przychodzę z łaski")
 dataset_mary["text_pl"] = dataset_mary["text_pl"].str.replace("które nosicie, dzisiaj dzieci zstąpią wiele łask", "które nosicie. Dzisiaj dzieci zstąpią wiele łask")
-
+dataset_mary["text_pl"] = dataset_mary["text_pl"].str.replace("przyszedłam", "przyszłam")
 
 dataset_jesus = dataset[dataset["author"] != "Holy Mary" ]
 
