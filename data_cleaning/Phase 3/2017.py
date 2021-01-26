@@ -18,7 +18,7 @@ dataset = pd.read_csv("trevignano_2017.csv", encoding="utf-8")
 
 
 # SPELLING FIX
-
+dataset["text_pl"] = dataset["text_pl"].str.replace("aa", "a")
 dataset["text_pl"] = dataset["text_pl"].str.replace("którzy idą za ulotnymi", "którzy idą za tym, co ulotne")
 dataset["text_pl"] = dataset["text_pl"].str.replace("namaściła nas pojedynczo", "naznaczyła nas pojedynczo")
 dataset["text_pl"] = dataset["text_pl"].str.replace("więc nie odwracajcie go", "więc nie odwracajcie się od Niego")
@@ -29,6 +29,11 @@ dataset["text_pl"] = dataset["text_pl"].str.replace("nowym osobom, którzy", "no
 dataset["text_pl"] = dataset["text_pl"].str.replace(" jesteśmy u kresu czasu, więc nie traćcie czasu", " jesteśmy u kresu, więc nie traćcie czasu")
 dataset["text_pl"] = dataset["text_pl"].str.replace("Otóż ​​błogosławię", "Teraz ​​błogosławię")
 dataset["text_pl"] = dataset["text_pl"].str.replace("Więc do zobaczenia, szczególnie dziś wieczorem", "Tak was widzę, szczególnie dzisiaj")
+dataset["text_pl"] = dataset["text_pl"].str.replace("grzesznym wyrazem Kościoła", "grzeszną postawą Kościoła")
+
+
+
+
 
 
 dataset.to_csv("trevignano2017.csv", index=False, encoding="utf-8")
