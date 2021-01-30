@@ -1,6 +1,6 @@
 import trevignano_2016 from '../js/trevignano2016.js';
 import trevignano_2017 from '../js/trevignano2017.js';
-import trevignano_2018 from '../js/trevignano_2018.js';
+import trevignano_2018 from '../js/trevignano2018.js';
 import trevignano_2019 from '../js/trevignano_2019.js';
 import trevignano_2020 from '../js/trevignano_2020.js';
 import trevignano_2021 from '../js/trevignano_2021.js';
