@@ -12,14 +12,14 @@ class TreviSpider(scrapy.Spider):
 	start_urls = ['http://www.lareginadelrosario.com/']
 
 	def parse(self, response):
-		for month in ["01","02","03","04","05","06","07","08","09","10","11","12"]:
+		for month in ["02"]:
 			url = f"https://www.lareginadelrosario.com/2021/{month}/"
 			yield Request(url, callback=self.parse_prophecies, meta={"month":month})
 
 	def parse_prophecies(self, response):
 		try:		
 			m = response.meta.get('month')	
-			main = response.xpath('//div[contains(@class,"uncustomized-post-template")]').extract()[-1]
+			main = response.xpath('//div[contains(@class,"uncustomized-post-template")]').extract()[-2]
 			l = ItemLoader(item=TrevignanoItem(), selector=main)
 			soup = BeautifulSoup(main, features="lxml")
 			prophecy = soup.get_text()

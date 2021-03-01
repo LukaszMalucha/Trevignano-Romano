@@ -292,7 +292,6 @@ dataset["text"] = dataset["text"].str.replace("Amen \.", "Amen.")
 
 
 dataset.to_csv("trevignano_2021.csv", index=False, encoding="utf-8")
-dataset.to_json("trevignano_2021.json",orient="records")
 
 
 

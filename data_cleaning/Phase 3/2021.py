@@ -33,8 +33,10 @@ def add_zero(string):
         string = "0" + string
     return string    
 
+dataset_1 = pd.read_csv("2021.csv", encoding="utf-8")
+dataset_2 = pd.read_csv("2021_2.csv", encoding="utf-8")
 
-dataset = pd.read_csv("2021.csv", encoding="utf-8")
+dataset = pd.concat([dataset_1, dataset_2])
 
 dataset["text"] = dataset["text"].str.strip()
 dataset["text"] = dataset["text"].str.replace("\n", " ")
@@ -210,7 +212,7 @@ dataset["text_pl"] = dataset["text"].apply(lambda x: translator.translate(x,lang
 
 # SPELLING FIX
 
-dataset["text_pl"] = dataset["text_pl"].str.replace("bądź mi posłuszny jako Bóg pokoju", "bądź mi posłuszny jako Bogu pokoju")
+dataset["text_pl"] = dataset["text_pl"].str.replace("bądź mi posłuszny jako Bóg pokoju", "bądź mi posłuszny jako Bógo pokoju")
 dataset["text_pl"] = dataset["text_pl"].str.replace("zamiast tego otworzę wasze serca i będę tam", "więc zamiast tego otwórzcie wasze serca i ja tam będę")
 dataset["text_pl"] = dataset["text_pl"].str.replace("których cię ", "których was ")
 dataset["text_pl"] = dataset["text_pl"].str.replace("siebie razem i zjednoczeni", "siebie razem i będąc zjednoczonymi")
@@ -226,10 +228,6 @@ dataset["text_pl"] = dataset["text_pl"].str.replace("Ojcze, Synu i Duchu Święt
 dataset["text_pl"] = dataset["text_pl"].str.replace("Amen Na koniec", "Amen. Na koniec")
 dataset["text_pl"] = dataset["text_pl"].str.replace(" i nim przeżyli", " i w nim żyli")
 dataset["text_pl"] = dataset["text_pl"].str.replace("pokoju iw radości", "pokoju i w radości")
-dataset["text_pl"] = dataset["text_pl"].str.replace("miłości, pokorze i miłości", "miłości, pokorze i miłosierdziu")
-dataset["text_pl"] = dataset["text_pl"].str.replace("jeśli niebo nie da wam tych instrukcji", "jeśli Niebo nie da wam tych instrukcji")
-dataset["text_pl"] = dataset["text_pl"].str.replace("miłości, pokorze i miłości", "miłości, pokorze i miłosierdziu")
-dataset["text_pl"] = dataset["text_pl"].str.replace("jeśli niebo nie da wam tych instrukcji", "jeśli Niebo nie da wam tych instrukcji")
 
 # MARY FORM
 
@@ -255,7 +253,6 @@ dataset_mary["text_pl"] = dataset_mary["text_pl"].str.replace("Moja umiłowana a
 dataset_mary["text_pl"] = dataset_mary["text_pl"].str.replace("Cena będzie trochę droga", "Cena będzie bardzo wysoka")
 dataset_mary["text_pl"] = dataset_mary["text_pl"].str.replace("Dzieci, dzisiaj zostanę koronowany przed wami i przed światem, Królowo, po raz kolejny", "Dzieci, dzisiaj zostanę koronowana przed wami i przed światem, zostanę Królową, po raz kolejny")
 dataset_mary["text_pl"] = dataset_mary["text_pl"].str.replace("Pieszczę cię jeden po drugim", "Przytulam was wszystkich")
-
 
 dataset_jesus = dataset[dataset["author"] != "Holy Mary" ]
 
@@ -294,7 +291,7 @@ dataset["text"] = dataset["text"].str.replace("Amen \.", "Amen.")
 
 
 
-dataset.to_csv("2021_cleaned.csv", index=False, encoding="utf-8")
+dataset.to_csv("trevignano_2021.csv", index=False, encoding="utf-8")
 dataset.to_json("trevignano_2021.json",orient="records")
 
 
