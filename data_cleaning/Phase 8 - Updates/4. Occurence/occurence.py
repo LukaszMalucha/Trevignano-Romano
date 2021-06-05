@@ -14,8 +14,9 @@ dataset_old = pd.read_csv("apparition_occurence.csv", encoding="utf-8")
 
 dataset_mar = pd.read_csv("march_2021.csv", encoding="utf-8")
 dataset_apr = pd.read_csv("april_2021.csv", encoding="utf-8")
+dataset_may = pd.read_csv("may_2021.csv", encoding="utf-8")
 
-dataset = pd.concat([dataset_mar, dataset_apr])
+dataset = pd.concat([dataset_mar, dataset_apr, dataset_may])
 
 
 dataset["year"] = dataset["year"].astype(str)

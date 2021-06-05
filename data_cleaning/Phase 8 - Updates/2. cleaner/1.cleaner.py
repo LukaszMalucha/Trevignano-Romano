@@ -34,7 +34,7 @@ def add_zero(string):
     return string    
 
 
-dataset = pd.read_csv("april.csv", encoding="utf-8")
+dataset = pd.read_csv("may.csv", encoding="utf-8")
 
 dataset["text"] = dataset["text"].str.strip()
 dataset["text"] = dataset["text"].str.replace("\n", " ")
@@ -233,7 +233,7 @@ dataset = dataset.rename(columns={"text": "text_it"})
 
 
 
-dataset.to_csv("april_cleaned.csv", index=False, encoding="utf-8")
+dataset.to_csv("may_cleaned.csv", index=False, encoding="utf-8")
 
 
 
