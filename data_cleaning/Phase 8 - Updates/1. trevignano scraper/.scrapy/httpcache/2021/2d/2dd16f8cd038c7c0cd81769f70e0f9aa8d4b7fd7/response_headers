@@ -1,15 +1,16 @@
-Date: Sat, 05 Jun 2021 09:37:33 GMT
+Date: Wed, 30 Jun 2021 11:04:24 GMT
 Server: Apache
 X-Powered-By: PHP/7.4.16
 Content-Encoding: gzip
 Vary: Accept-Encoding,Cookie,User-Agent
 Content-Language: en
-X-Gt-Cache-Status: HIT-TRANS
-Cache-Control: max-age=1444, public
+X-Gt-Cache-Status: HIT-ORIG
+Expires: Wed, 30 Jun 2021 10:45:01 GMT
+Cache-Control: max-age=2664, public
 Referrer-Policy: no-referrer-when-downgrade
 Referrer-Policy: no-referrer-when-downgrade
 Pragma: public
-Expires: Fri, 04 Jun 2021 15:46:25 GMT
-Last-Modified: Fri, 04 Jun 2021 14:46:25 GMT
-Etag: W/"89b4-5c3f1c18c0bf1"
+X-Gt-Queued-Translations-Count: 1
+Last-Modified: Wed, 30 Jun 2021 09:45:01 GMT
+Etag: W/"8cab-5c5f8938af251"
 Content-Type: text/html; charset=utf-8
