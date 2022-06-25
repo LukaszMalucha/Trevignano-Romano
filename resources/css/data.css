@@ -1,0 +1,94 @@
+/*------------------------------------------------------------------------------
+    DASHBOARD CARDS
+------------------------------------------------------------------------------*/
+
+
+.dashboard-cards {
+    border: none;
+    text-align: center;
+    box-shadow: none;
+    width: 100%;
+    margin: auto;
+    padding: 0px 0px 60px 0px;
+    letter-spacing: 0.2px;
+}
+
+
+.row-break {
+    height: 20px;
+    margin: 0px;
+}
+
+.row-cards {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+.row-text {
+  margin-bottom: 40px;
+}
+
+.dashboard-cards h5 {
+  color: #14171a !important;
+  font-style: italic;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.col-prophecies {
+  min-height: 780px;
+  height: 780px;
+  overflow: auto;
+}
+
+
+/*----------------------------------------------
+    MEDIA QUERIES
+------------------------------------------------*/
+
+
+@media(max-width:1700px) {
+  .dashboard-cards {
+    width: 99%;
+  }
+
+  .card-projects {
+    padding: 5px;
+  }
+
+}
+
+@media(max-width:1440px) {
+
+
+}
+
+
+
+@media(max-width:1200px) {
+
+}
+
+
+@media(max-width:1030px) {
+
+
+}
+
+@media(max-width:800px) {
+
+
+
+}
+
+
+@media(max-width:600px) {
+
+  .dashboard-cards {
+    width: 100%;
+  }
+
+}
+

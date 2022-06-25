@@ -1,0 +1,384 @@
+/*------------------------------------------------------------------------------
+    TOP NAVBAR
+------------------------------------------------------------------------------*/
+
+.navbar {
+	border-radius: 0px;
+}
+
+
+
+.top-navbar {
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	z-index: 300;
+	border: none;
+	height: 40px;
+	min-height: 40px;
+	padding-left: 0%;
+	padding-right: 0%;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+	background-color: #fff;
+	border: none;
+}
+
+.navbar-brand .material-icons {
+	color: #1a2026;
+}
+
+.navbar-brand .material-icons, .navbar-brand .fab, .navbar-brand .fas {
+    position: relative;
+    top: 1.5px;
+    font-size: 18px;
+    margin-right: 3px;
+    color: inherit;
+}
+
+
+/*------------------------------------------------------------------------------
+    LEFT-SIDE HEADER AREA
+------------------------------------------------------------------------------*/
+
+
+.top-navbar .navbar-brand {
+	margin: 0px;
+	height: 40px;
+	float: left;
+	text-align: left;
+	padding: 0px;
+	font-weight: 500;
+	color: #798b9a;
+	background: transparent;
+	text-transform: uppercase;
+}
+
+.navbar-header {
+	width: 66%;
+	margin-left: 0px;
+	float: left;
+	padding-left: 10px;
+}
+
+.navbar-header a {
+	font-size: 14px;
+	letter-spacing: 1px;
+	line-height: 40px;
+	margin-top: 0px;
+	font-weight: 400;
+	display: block;
+	color: #798b9a;
+}
+
+nav i {
+  height: 20px;
+}
+
+.navbar-brand .material-icons,
+.navbar-brand .fab {
+	float: left;
+	font-size: 18px;
+	margin-right: 5px;
+	margin-top: -3px;
+	letter-spacing: 1px;
+	height: auto;
+	background: #0077b5;
+	padding: 3px 3px 3px 3px;
+	color: #798b9a;
+	font-weight: normal;
+}
+
+.navbar-header:hover,
+.navbar-header:focus {
+	background: transparent;
+	color: #00539E;
+}
+
+
+.navbar-header a:hover {
+	text-decoration: none !important;
+}
+
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+	background-color: transparent;
+	outline: 0px;
+}
+
+
+.navbar-default .navbar-brand:hover {
+	color: #1da1f2;
+}
+
+.navbar-default .navbar-brand:hover .navbar-default .navbar-brand:focus {
+	color: #e5ebef;
+}
+
+
+/*------------------------------------------------------------------------------
+   MIDDLE SEARCHBOX
+------------------------------------------------------------------------------*/
+
+nav form {
+    height:40px;
+    line-height: 40px;
+}
+
+.searchbox-wrapper {
+    position: relative;
+    width: 100%;
+    margin: auto;
+}
+
+
+.btn-transparent {
+    position: absolute;
+    top: 1px;
+    right: 0px;
+    height:40px;
+    color: #6d6d6e;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.btn-transparent i {
+  font-size: 20px;
+}
+
+.btn-transparent:hover,
+.btn-transparent:active,
+.btn-transparent:focus {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+
+#searchbox {
+    background-color: #ececec;
+    border: 1px solid rgba(188,188,183,0.50);
+    border-radius: 5px;
+    margin: auto;
+    padding: 4px 8px;
+    font-size: 14px;
+    height: 24px;
+    color: #202124;
+
+}
+
+#searchbox::placeholder {
+    color: #3c4146 !important;
+}
+
+/*------------------------------------------------------------------------------
+    RIGHT SIDE LINKS
+------------------------------------------------------------------------------*/
+
+
+nav ul a {
+ font-size: 10px;
+ letter-spacing: 0.4px;
+ color: #798b9a;
+text-transform: uppercase;
+}
+
+.nav-link {
+	height: 100% !important;
+	margin: 12px 0px 12px 24px;
+	padding: 0px;
+}
+
+.nav i,
+.nav i.material-icons {
+	height: 14px;
+	font-size: 14px;
+	margin-right: 6px;
+}
+
+
+.img-logo {
+	height: 20px;
+	margin: 10px 8px 8px 0px;
+	border-radius: 50%;
+}
+
+.top-navbar .navbar-right {
+	width: auto;
+	height: 40px;
+	margin: 0px;
+	line-height: 1;
+	padding: 0px;
+	color: #798b9a;
+	float: right !important;
+}
+
+.top-navbar .navbar-right>a {
+	padding: 0px;
+	letter-spacing: 1px;
+	font-size: 15px;
+}
+
+.top-navbar .navbar-right>a>i {
+	margin-right: 5px;
+	font-size: 16px;
+	height: 40px;
+}
+
+
+.navbar-right>a:hover,
+.navbar-right>a:focus {
+	text-decoration: none;
+	outline: 0px;
+}
+
+
+nav ul a:hover {
+	background-color: #fff;
+	color: #00539E;
+}
+
+nav ul li:hover,
+nav ul li:active {
+	background: transparent;
+	color: #1da1f2;
+}
+
+
+nav ul a:hover {
+	color: #00539E;
+}
+
+.nav>li>a:hover,
+.nav>li>a:focus,
+.nav>li>a:active {
+	background-color: transparent;
+	color: #1da1f2;
+}
+
+.navbar-right>a:hover,
+.navbar-right>a:focus {
+	background: transparent;
+	color: #e5ebef;
+}
+
+
+/*------------------------------------------------------------------------------
+    DROPDOWN MENU
+------------------------------------------------------------------------------*/
+
+
+.dropdown-content li > span {
+    padding: 12px 0px;
+}
+
+.dropdown-content {
+	top: 40px !important;
+	width: max-content !important;
+}
+
+.dropdown-content li {
+	margin-bottom: 0px;
+	margin-left: 0px !important;
+}
+
+.dropdown-content li>a {
+	font-size: 12px 6px;
+	text-decoration: none;
+}
+
+.dropdown-content li>fa {
+	font-size: 16px;
+}
+
+
+.dropdown-content li>a {
+	color: #798b9a;
+	background-color: #fff;
+}
+
+.dropdown-content li>fa {
+	color: #1a2026;
+}
+
+.dropdown-content li:hover {
+  background: transparent;
+}
+
+
+/*------------------------------------------------------------------------------
+    MEDIA QUERIES
+------------------------------------------------------------------------------*/
+
+@media(max-width:1700px) {
+	.top-navbar {
+
+	}
+	.navbar-header {
+		width: 66%;
+	}
+}
+
+@media(max-width:1400px) {
+	.top-navbar {}
+}
+
+@media(max-width:1200px) {
+	.top-navbar {
+		padding-right: 1%;
+	}
+
+}
+
+@media(max-width:1025px) {
+	.top-navbar {
+	}
+	.nav>li>a {
+		padding-right: 0px;
+	}
+
+
+	nav a.sidenav-trigger i {
+		height: 40px;
+		line-height: 40px;
+	}
+	#trigger {
+		position: relative;
+	}
+
+			.navbar-right {
+	  display: none;
+	}
+
+}
+
+@media(max-width:900px) {
+
+  .navbar-header {
+		width: 100%;
+	}
+
+
+
+}
+
+@media only screen and (max-width: 701px) {
+
+}
+
+
+@media only screen and (max-width: 600px) {
+
+
+
+
+	.btn-transparent {
+    position: absolute;
+    top: 1px;
+    right: -16px;
+  }
+}

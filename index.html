@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Search Engine Meta-->
+  <title>Apparitions in Trevignano Romano </title>
+  <meta name="Description"
+        content="Apparitions in Trevignano Romano">
+  <meta name="KeyWords" content="Holy Mary, Jesus, Holy Father">
+  <link rel="shortcut icon" type="image/png" href="https://septellar.s3-eu-west-1.amazonaws.com/img/logo-small.png"/>
+  <!-- Materialize-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- FontAwesome Styles-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css"
+        integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/cb5db23bd5.js"></script>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700&display=swap" rel="stylesheet">
+  <!-- Custom Styles-->
+  <link rel="stylesheet" href="resources/css/custom-styles.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="resources/css/data.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="resources/css/navbar.css" rel="stylesheet"/>
+
+</head>
+<body>
+<div id="app">
+
+  <!-- TOP NAVBAR -->
+  <nav class="row navbar navbar-default top-navbar" role="navigation">
+
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.html">
+        <strong> Apparitions in Trevignano Romano</strong>
+      </a>
+    </div>
+    <div class="col s4 m5 l4 plain-element right-align">
+      <ul class="nav navbar-top-links navbar-right">
+
+        <li><a class="nav-link" target="_blank" href="https://www.biblekeywords.com/"><i class="fas fa-bible"></i> Bible
+          Keywords</a>
+        </li>
+        <li><a class="nav-link" target="_blank" href="https://www.mydailyspark.com/">
+          <i class="fas fa-fire"></i> My Daily Spark </a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div id="page-index">
+    <div class="row top-nav-menu" v-cloak>
+      <div class="col s3 m2 col-link">
+        <button v-if="year == '2016'" class="btn btn-pill active" @click="setYear(2016)">2016</button>
+        <button v-else class="btn btn-pill" @click="setYear(2016)">2016</button>
+      </div>
+      <div class="col s3 m2 col-link">
+        <button v-if="year == '2017'" class="btn btn-pill active" @click="setYear(2017)">2017</button>
+        <button v-else class="btn btn-pill" @click="setYear(2017)">2017</button>
+      </div>
+      <div class="col s3 m2 col-link">
+        <button v-if="year == '2018'" class="btn btn-pill active" @click="setYear(2018)">2018</button>
+        <button v-else class="btn btn-pill" @click="setYear(2018)">2018</button>
+      </div>
+      <div class="col s3 m2 col-link">
+        <button v-if="year == '2019'" class="btn btn-pill active" @click="setYear(2019)">2019</button>
+        <button v-else class="btn btn-pill" @click="setYear(2019)">2019</button>
+      </div>
+      <div class="col s3 m2 col-link">
+        <button v-if="year == '2020'" class="btn btn-pill active" @click="setYear(2020)">2020</button>
+        <button v-else class="btn btn-pill" @click="setYear(2020)">2020</button>
+      </div>
+      <div class="col s3 m2 col-link">
+        <button v-if="year == '2021'" class="btn btn-pill active" @click="setYear(2021)">2021</button>
+        <button v-else class="btn btn-pill" @click="setYear(2021)">2021</button>
+      </div>
+
+    </div>
+    <div class="row top-nav-menu" v-cloak>
+      <div class="col s2 m1 col-link">
+        <button v-if="month == 'January'" class="btn btn-pill active" @click="getProphecies(year, 'January')">Jan
+        </button>
+        <button v-else class="btn btn-pill" @click="getProphecies(year, 'January')">Jan</button>
+      </div>
+      <div class="col s2 m1 col-link">
+        <button v-if="month == 'February'" class="btn btn-pill active" @click="getProphecies(year, 'February')">Feb
+        </button>
+        <button v-else class="btn btn-pill" @click="getProphecies(year, 'February')">Feb</button>
+      </div>
+      <div class="col s2 m1 col-link">
+        <button v-if="month == 'March'" class="btn btn-pill active" @click="getProphecies(year, 'March')">Mar</button>
+        <button v-else class="btn btn-pill" @click="getProphecies(year, 'March')">Mar</button>
+      </div>
+      <div class="col s2 m1 col-link">
+        <button v-if="month == 'April'" class="btn btn-pill active" @click="getProphecies(year, 'April')">Apr</button>
+        <button v-else class="btn btn-pill" @click="getProphecies(year, 'April')">Apr</button>
+      </div>
+      <div class="col s2 m1 col-link">
+        <button v-if="month == 'May'" class="btn btn-pill active" @click="getProphecies(year, 'May')">May
+        </button>
+        <button v-else class="btn btn-pill" @click="getProphecies(year, 'May')">May</button>
+      </div>
+      <div class="col s2 m1 col-link">
+        <button v-if="month == 'June'" class="btn btn-pill active" @click="getProphecies(year, 'June')">Jun
+        </button>
+        <button v-else class="btn btn-pill" @click="getProphecies(year, 'June')">Jun</button>
+      </div>
+      <div class="col s2 m1 col-link">
+        <button v-if="month == 'July'" class="btn btn-pill active" @click="getProphecies(year, 'July')">Jul
+        </button>
+        <button v-else class="btn btn-pill" @click="getProphecies(year, 'July')">Jul</button>
+      </div>
+      <div class="col s2 m1 col-link">
+        <button v-if="month == 'August'" class="btn btn-pill active" @click="getProphecies(year, 'August')">Aug
+        </button>
+        <button v-else class="btn btn-pill" @click="getProphecies(year, 'August')">Aug</button>
+      </div>
+      <div class="col s2 m1 col-link">
+        <button v-if="month == 'September'" class="btn btn-pill active" @click="getProphecies(year, 'September')">Sep
+        </button>
+        <button v-else class="btn btn-pill" @click="getProphecies(year, 'September')">Sep</button>
+      </div>
+      <div class="col s2 m1 col-link">
+        <button v-if="month == 'October'" class="btn btn-pill active" @click="getProphecies(year, 'October')">Oct
+        </button>
+        <button v-else class="btn btn-pill" @click="getProphecies(year, 'October')">Oct</button>
+      </div>
+      <div class="col s2 m1 col-link">
+        <button v-if="month == 'November'" class="btn btn-pill active" @click="getProphecies(year, 'November')">Nov
+        </button>
+        <button v-else class="btn btn-pill" @click="getProphecies(year, 'November')">Nov</button>
+      </div>
+      <div class="col s2 m1 col-link">
+        <button v-if="month == 'December'" class="btn btn-pill active" @click="getProphecies(year, 'December')">Dec
+        </button>
+        <button v-else class="btn btn-pill" @click="getProphecies(year, 'December')">Dec</button>
+      </div>
+
+
+    </div>
+    <div class="row top-nav-menu">
+      <div class="col s4 m3 col-link">
+        <button v-if="lang == 'en'" class="btn btn-pill active" @click="setLanguage('en')">English
+        </button>
+        <button v-else class="btn btn-pill" @click="setLanguage('en')">English</button>
+      </div>
+      <div class="col s4 m3 col-link">
+        <button v-if="lang == 'it'" class="btn btn-pill active" @click="setLanguage('it')">Italian
+        </button>
+        <button v-else class="btn btn-pill" @click="setLanguage('it')">Italian</button>
+      </div>
+      <div class="col s4 m3 col-link">
+        <button v-if="lang == 'pl'" class="btn btn-pill active" @click="setLanguage('pl')">Polish
+        </button>
+        <button v-else class="btn btn-pill" @click="setLanguage('pl')">Polish</button>
+      </div>
+    </div>
+    <div class="row plain-element">
+      <div class="col sidebar" v-cloak>
+        <br>
+        <div class="row section">
+          <div class="row">
+            <span class="section-header">Year</span>
+          </div>
+          <div class="row">
+            <a @click="setYear(2021)">
+
+              <div v-if="year == '2021'" class="card menu-card active">
+                <span class="section-element"><i class="fas fa-caret-right"></i>2021</span>
+              </div>
+              <div v-else class="card menu-card">
+                <span class="section-element"><i class="fas fa-caret-right"></i>2021</span>
+              </div>
+            </a>
+            <a @click="setYear(2020)">
+              <div v-if="year == '2020'" class="card menu-card active">
+                <span class="section-element"><i class="fas fa-caret-right"></i>2020</span>
+              </div>
+              <div v-else class="card menu-card">
+                <span class="section-element"><i class="fas fa-caret-right"></i>2020</span>
+              </div>
+            </a>
+            <a @click="setYear(2019)">
+              <div v-if="year == '2019'" class="card menu-card active">
+                <span class="section-element"><i class="fas fa-caret-right"></i>2019</span>
+              </div>
+              <div v-else class="card menu-card">
+                <span class="section-element"><i class="fas fa-caret-right"></i>2019</span>
+              </div>
+            </a>
+            <a @click="setYear(2018)">
+              <div v-if="year == '2018'" class="card menu-card active">
+                <span class="section-element"><i class="fas fa-caret-right"></i>2018</span>
+              </div>
+              <div v-else class="card menu-card">
+                <span class="section-element"><i class="fas fa-caret-right"></i>2018</span>
+              </div>
+            </a>
+            <a @click="setYear(2017)">
+              <div v-if="year == '2017'" class="card menu-card active">
+                <span class="section-element"><i class="fas fa-caret-right"></i>2017</span>
+              </div>
+              <div v-else class="card menu-card">
+                <span class="section-element"><i class="fas fa-caret-right"></i>2017</span>
+              </div>
+            </a>
+            <a @click="setYear(2016)">
+              <div v-if="year == '2016'" class="card menu-card active">
+                <span class="section-element"><i class="fas fa-caret-right"></i>2016</span>
+              </div>
+              <div v-else class="card menu-card">
+                <span class="section-element"><i class="fas fa-caret-right"></i>2016</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="row">
+            <span class="section-header">Language</span>
+          </div>
+          <div class="row">
+            <a @click="setLanguage('en')">
+              <div v-if="lang == 'en'" class="card menu-card active">
+                <span class="section-element"><i class="fas fa-caret-right"></i>English</span>
+              </div>
+              <div v-else class="card menu-card">
+                <span class="section-element"><i class="fas fa-caret-right"></i>English</span>
+              </div>
+            </a>
+            <a @click="setLanguage('it')">
+              <div v-if="lang == 'it'" class="card menu-card active">
+                <span class="section-element"><i class="fas fa-caret-right"></i>Italian</span>
+              </div>
+              <div v-else class="card menu-card">
+                <span class="section-element"><i class="fas fa-caret-right"></i>Italian</span>
+              </div>
+            </a>
+            <a @click="setLanguage('pl')">
+              <div v-if="lang == 'pl'" class="card menu-card active">
+                <span class="section-element"><i class="fas fa-caret-right"></i>Polish</span>
+              </div>
+              <div v-else class="card menu-card">
+                <span class="section-element"><i class="fas fa-caret-right"></i>Polish</span>
+              </div>
+            </a>
+          </div>
+          <div class="row">
+            <span class="section-header">Official Website</span>
+          </div>
+          <div class="row">
+            <a target="_blank" href="https://www.lareginadelrosario.com">
+              <div class="card menu-card">
+                <span class="section-element"><i class="fas fa-caret-right"></i>Website</span>
+              </div>
+            </a>
+          </div>
+          <div class="row">
+            <span class="section-header">Analytics</span>
+          </div>
+          <div class="row">
+            <a>
+              <div class="card menu-card">
+                <span class="section-element"><i class="fas fa-caret-right"></i>Coming Soon</span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="row row-loader">
+          <div class="loader" id="loader"></div>
+
+
+        </div>
+      </div>
+      <div class="col s12 m12 l10 col-link">
+        <div class="dashboard-cards" id="welcome" v-cloak>
+          <div class="row plain-element">
+            <div class="row top-menu">
+              <div v-if="month == 'January'" class="col s1 plain-element active"><a
+                      @click="getProphecies(year, 'January')" class=""><p>January</p></a>
+              </div>
+              <div v-else class="col s1 plain-element"><a @click="getProphecies(year, 'January')" class=""><p>
+                January</p></a>
+              </div>
+              <div v-if="month == 'February'" class="col s1 plain-element active">
+                <a @click="getProphecies(year, 'February')" class=""><p>February</p></a>
+              </div>
+              <div v-else class="col s1 plain-element">
+                <a @click="getProphecies(year, 'February')" class=""><p> February</p></a>
+              </div>
+              <div v-if="month == 'March'" class="col s1 plain-element active">
+                <a @click="getProphecies(year, 'March')" class=""><p>March</p></a>
+              </div>
+              <div v-else class="col s1 plain-element">
+                <a @click="getProphecies(year, 'March')" class=""><p> March</p></a>
+              </div>
+              <div v-if="month == 'April'" class="col s1 plain-element active">
+                <a @click="getProphecies(year, 'April')" class=""><p>April</p></a>
+              </div>
+              <div v-else class="col s1 plain-element">
+                <a @click="getProphecies(year, 'April')" class=""><p> April</p></a>
+              </div>
+              <div v-if="month == 'May'" class="col s1 plain-element active">
+                <a @click="getProphecies(year, 'May')" class=""><p>May</p></a>
+              </div>
+              <div v-else class="col s1 plain-element">
+                <a @click="getProphecies(year, 'May')" class=""><p> May</p></a>
+              </div>
+              <div v-if="month == 'June'" class="col s1 plain-element active">
+                <a @click="getProphecies(year, 'June')" class=""><p>June</p></a>
+              </div>
+              <div v-else class="col s1 plain-element">
+                <a @click="getProphecies(year, 'June')" class=""><p> June</p></a>
+              </div>
+              <div v-if="month == 'July'" class="col s1 plain-element active">
+                <a @click="getProphecies(year, 'July')" class=""><p>July</p></a>
+              </div>
+              <div v-else class="col s1 plain-element">
+                <a @click="getProphecies(year, 'July')" class=""><p> July</p></a>
+              </div>
+              <div v-if="month == 'August'" class="col s1 plain-element active">
+                <a @click="getProphecies(year, 'August')" class=""><p>August</p></a>
+              </div>
+              <div v-else class="col s1 plain-element">
+                <a @click="getProphecies(year, 'August')" class=""><p> August</p></a>
+              </div>
+              <div v-if="month == 'September'" class="col s1 plain-element active">
+                <a @click="getProphecies(year, 'September')" class=""><p>September</p></a>
+              </div>
+              <div v-else class="col s1 plain-element">
+                <a @click="getProphecies(year, 'September')" class=""><p> September</p></a>
+              </div>
+              <div v-if="month == 'October'" class="col s1 plain-element active">
+                <a @click="getProphecies(year, 'October')" class=""><p>October</p></a>
+              </div>
+              <div v-else class="col s1 plain-element">
+                <a @click="getProphecies(year, 'October')" class=""><p> October</p></a>
+              </div>
+              <div v-if="month == 'November'" class="col s1 plain-element active">
+                <a @click="getProphecies(year, 'November')" class=""><p>November</p></a>
+              </div>
+              <div v-else class="col s1 plain-element">
+                <a @click="getProphecies(year, 'November')" class=""><p> November</p></a>
+              </div>
+              <div v-if="month == 'December'" class="col s1 plain-element active">
+                <a @click="getProphecies(year, 'December')" class=""><p>December</p></a>
+              </div>
+              <div v-else class="col s1 plain-element">
+                <a @click="getProphecies(year, 'December')" class=""><p> December</p></a>
+              </div>
+            </div>
+          </div>
+          <div v-on="prophecies" class="dashboard-cards" v-cloak>
+            <br>
+            <div class="col s12 m12 l12 left-align col-prophecies">
+              <div class="col s12 m12 l8  left-align">
+              <div v-for="(row, index) in prophecies" class="row row-text">
+                <h5> {{ row.day }}.{{ row.month }}.{{ row.year }} - {{ row.author }}</h5>
+                <div v-if="lang == 'en'" class="row  left-align">
+                  {{ row.text_en }}
+                </div>
+                <div v-else-if="lang == 'it'" class="row  left-align">
+                  {{ row.text }}
+                </div>
+                <div v-else-if="lang == 'pl'" class="row  left-align">
+                  {{ row.text_pl }}
+                </div>
+                <div class="row row-break">
+                </div>
+              </div>
+
+            </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+</div>
+
+
+<!-- /. WRAPPER  -->
+
+<div class="footer">
+  <p><a target="_blank"
+        href="https://www.freeprivacypolicy.com/privacy/view/9b972ff9a2aaeda03f07216c15625791/">Privacy
+    Policy</a> • © 2020 www.lukaszmalucha.com - All Rights Reserved • Powered by Septellar &trade;</p>
+</div>
+
+<!-- Materialize Js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script type="module" src="resources/js/main.js"></script>
+
+
+</body>
+</html>
