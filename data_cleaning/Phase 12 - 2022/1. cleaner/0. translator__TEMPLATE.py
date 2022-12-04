@@ -48,11 +48,23 @@ dataset_translate = dataset[dataset["text_pt"].isnull()]
 
 
 
-dataset_translate["text_es"] = dataset_translate["text_it"].apply(lambda x: gs.translate(x,'es'))
-dataset_translate["text_fr"] = dataset_translate["text_en"].apply(lambda x: gs.translate(x,'fr'))
-dataset_translate["text_zh"] = dataset_translate["text_en"].apply(lambda x: gs.translate(x,'zh'))
-dataset_translate["text_de"] = dataset_translate["text_en"].apply(lambda x: gs.translate(x,'de'))
-dataset_translate["text_pt"] = dataset_translate["text_en"].apply(lambda x: gs.translate(x,'pt'))
+from googletrans import Translator
+translator = Translator()
+
+dataset_translate["text_es"] = dataset_translate["text_en"].apply(lambda x: translator.translate(x,'es'))
+dataset_translate["text_es"] = dataset_translate["text_es"].apply(lambda x: x.text)
+
+dataset_translate["text_fr"] = dataset_translate["text_en"].apply(lambda x: translator.translate(x,'fr'))
+dataset_translate["text_fr"] = dataset_translate["text_fr"].apply(lambda x: x.text)
+
+dataset_translate["text_zh"] = dataset_translate["text_en"].apply(lambda x: translator.translate(x,'zh-cn'))
+dataset_translate["text_zh"] = dataset_translate["text_zh"].apply(lambda x: x.text)
+
+dataset_translate["text_de"] = dataset_translate["text_en"].apply(lambda x: translator.translate(x,'de'))
+dataset_translate["text_de"] = dataset_translate["text_de"].apply(lambda x: x.text)
+
+dataset_translate["text_pt"] = dataset_translate["text_en"].apply(lambda x: translator.translate(x,'pt'))
+dataset_translate["text_pt"] = dataset_translate["text_pt"].apply(lambda x: x.text)
 
 
 dataset = pd.concat([dataset_ok, dataset_translate])

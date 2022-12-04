@@ -21,9 +21,10 @@ dataset_august = pd.read_csv("august_2022.csv", encoding="utf-8")
 dataset_september = pd.read_csv("september_2022.csv", encoding="utf-8")
 dataset_october = pd.read_csv("october_2022.csv", encoding="utf-8")
 dataset_november = pd.read_csv("november_2022.csv", encoding="utf-8")
+dataset_december = pd.read_csv("december_2022.csv", encoding="utf-8")
 
 
-dataset2022 = pd.concat([dataset_jan,dataset_feb, dataset_mar, dataset_apr, dataset_may, dataset_june, dataset_july, dataset_august, dataset_september, dataset_october, dataset_november])
+dataset2022 = pd.concat([dataset_jan,dataset_feb, dataset_mar, dataset_apr, dataset_may, dataset_june, dataset_july, dataset_august, dataset_september, dataset_october, dataset_november, dataset_december])
 
 dataset2022 = dataset2022.drop_duplicates()
 dataset2022 = dataset2022[dataset2022["text_it"].notnull()]
